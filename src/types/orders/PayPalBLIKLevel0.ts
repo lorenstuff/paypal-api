@@ -1,11 +1,9 @@
-// noinspection SpellCheckingInspection
-
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-blik_seamless */
-export interface PayPalBLIKLevel0
+export type PayPalBLIKLevel0 =
 {
-	auth_code : string;
-}
+	auth_code: string;
+};

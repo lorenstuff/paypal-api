@@ -5,13 +5,12 @@
 import { PayPalCaptureStatusDetails } from "./PayPalCaptureStatusDetails.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-capture_status */
-export interface PayPalCaptureStatus
+export type PayPalCaptureStatus =
 {
-	status? : "COMPLETED" | "DECLINED" | "PARTIALLY_REFUNDED" | "PENDING" | "REFUNDED" | "FAILED";
-
-	status_details? : PayPalCaptureStatusDetails;
-}
+	status?: "COMPLETED" | "DECLINED" | "PARTIALLY_REFUNDED" | "PENDING" | "REFUNDED" | "FAILED";
+	status_details?: PayPalCaptureStatusDetails;
+};

@@ -1,16 +1,11 @@
-// noinspection SpellCheckingInspection
-
 //
-// Type
+// Types
 //
 
-export interface PayPalSofort
+export type PayPalSofort =
 {
-	name? : string;
-
-	country_code? : string;
-
-	bic? : string;
-
-	iban_last_chars? : string;
-}
+	name?: string;
+	country_code?: string;
+	bic?: string;
+	iban_last_chars?: string;
+};

@@ -5,11 +5,11 @@
 import { PayPalEventType } from "./PayPalEventType.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/webhooks/v1/#definition-event_type_list */
-export interface PayPalEventTypeList
+export type PayPalEventTypeList =
 {
-	event_types? : PayPalEventType[];
-}
+	event_types?: PayPalEventType[];
+};

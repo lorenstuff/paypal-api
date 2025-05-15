@@ -5,11 +5,11 @@
 import { PayPalVaultResponse } from "./PayPalVaultResponse.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-venmo_wallet_attributes_response */
-export interface PayPalVenmoWalletAttributesResponse
+export type PayPalVenmoWalletAttributesResponse =
 {
-	vault? : PayPalVaultResponse;
-}
+	vault?: PayPalVaultResponse;
+};

@@ -7,25 +7,18 @@ import { PayPalNetAmountBreakdown } from "./PayPalNetAmountBreakdown.js";
 import { PayPalPlatformFee } from "./PayPalPlatformFee.js";
 
 //
-// Type
+// Types
 //
 
 /** @note This type is missing from the docs so this information is derived from the PayPalRefund schema. */
-export interface PayPalSellerPayableBreakdown
+export type PayPalSellerPayableBreakdown =
 {
-	platform_fees? : PayPalPlatformFee[];
-
-	net_amount_breakdown? : PayPalNetAmountBreakdown[];
-
-	gross_amount? : PayPalMoney;
-
-	paypal_fee? : PayPalMoney;
-
-	paypal_fee_in_receivable_currency? : PayPalMoney;
-
-	net_amount? : PayPalMoney;
-
-	net_amount_in_receivable_currency? : PayPalMoney;
-
-	total_refunded_amount? : PayPalMoney;
-}
+	platform_fees?: PayPalPlatformFee[];
+	net_amount_breakdown?: PayPalNetAmountBreakdown[];
+	gross_amount?: PayPalMoney;
+	paypal_fee?: PayPalMoney;
+	paypal_fee_in_receivable_currency?: PayPalMoney;
+	net_amount?: PayPalMoney;
+	net_amount_in_receivable_currency?: PayPalMoney;
+	total_refunded_amount?: PayPalMoney;
+};

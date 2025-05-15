@@ -6,13 +6,12 @@ import { PayPalVaultVenmoWalletBase } from "./PayPalVaultVenmoWalletBase.js";
 import { PayPalWalletCustomer } from "./PayPalWalletCustomer.js";
 
 //
-// Type
+// Types
 //
 
 
-export interface PayPalVenmoWalletAttributes
+export type PayPalVenmoWalletAttributes =
 {
-	customer? : Pick<PayPalWalletCustomer, "id">; // Note: This only has the "id" field in the docs
-
-	vault? : PayPalVaultVenmoWalletBase;
-}
+	customer?: Pick<PayPalWalletCustomer, "id">; // Note: This only has the "id" field in the docs
+	vault?: PayPalVaultVenmoWalletBase;
+};

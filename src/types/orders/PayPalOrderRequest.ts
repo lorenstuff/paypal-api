@@ -9,21 +9,19 @@ import { PayPalPaymentSource } from "./PayPalPaymentSource.js";
 import { PayPalPurchaseUnitRequest } from "./PayPalPurchaseUnitRequest.js";
 
 //
-// Type
+// Types
 //
 
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-order_request */
-export interface PayPalOrderRequest
+export type PayPalOrderRequest =
 {
-	purchase_units : PayPalPurchaseUnitRequest[];
-
-	intent : PayPalCheckoutPaymentIntent;
+	purchase_units: PayPalPurchaseUnitRequest[];
+	intent: PayPalCheckoutPaymentIntent;
 
 	/** @deprecated */
-	payer? : PayPalPayer;
+	payer?: PayPalPayer;
 
-	payment_source? : PayPalPaymentSource;
-
-	application_context? : PayPalApplicationContext;
-}
+	payment_source?: PayPalPaymentSource;
+	application_context?: PayPalApplicationContext;
+};

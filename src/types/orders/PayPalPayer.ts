@@ -9,19 +9,15 @@ import { PayPalPortablePostalAddressMediumGrained } from "./PayPalPortablePostal
 import { PayPalTaxInfo } from "./PayPalTaxInfo.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-payer */
-export interface PayPalPayer extends PayPalPayerBase
+export type PayPalPayer = PayPalPayerBase &
 {
-	name? : PayPalName;
-
-	phone? : PayPalPhoneWithType;
-
-	birth_date? : string;
-
-	tax_info? : PayPalTaxInfo;
-
-	address? : PayPalPortablePostalAddressMediumGrained;
-}
+	name?: PayPalName;
+	phone?: PayPalPhoneWithType;
+	birth_date?: string;
+	tax_info?: PayPalTaxInfo;
+	address?: PayPalPortablePostalAddressMediumGrained;
+};

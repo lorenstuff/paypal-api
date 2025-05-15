@@ -1,5 +1,3 @@
-// noinspection SpellCheckingInspection
-
 //
 // Imports
 //
@@ -20,37 +18,24 @@ import { PayPalTrustlyRequest } from "./PayPalTrustlyRequest.js";
 import { PayPalVenmoWalletRequest } from "./PayPalVenmoWalletRequest.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-payment_source */
-export interface PayPalPaymentSource
+export type PayPalPaymentSource =
 {
-	card? : PayPalCardRequest;
-
-	token? : PayPalToken;
-
-	paypal? : PayPalWallet;
-
-	bancontact? : PayPalBancontactRequest;
-
-	blik? : PayPalBLIKRequest;
-
-	eps? : PayPalEPSRequest;
-
-	giropay? : PayPalGiropayRequest;
-
-	ideal? : PayPalIdealRequest;
-
-	mybank? : PayPalMyBankRequest;
-
-	p24? : PayPalP24Request;
-
-	sofort? : PayPalSofortRequest;
-
-	trustly? : PayPalTrustlyRequest;
-
-	apple_pay? : PayPalApplePayRequest;
-
-	venmo? : PayPalVenmoWalletRequest;
-}
+	card?: PayPalCardRequest;
+	token?: PayPalToken;
+	paypal?: PayPalWallet;
+	bancontact?: PayPalBancontactRequest;
+	blik?: PayPalBLIKRequest;
+	eps?: PayPalEPSRequest;
+	giropay?: PayPalGiropayRequest;
+	ideal?: PayPalIdealRequest;
+	mybank?: PayPalMyBankRequest;
+	p24?: PayPalP24Request;
+	sofort?: PayPalSofortRequest;
+	trustly?: PayPalTrustlyRequest;
+	apple_pay?: PayPalApplePayRequest;
+	venmo?: PayPalVenmoWalletRequest;
+};

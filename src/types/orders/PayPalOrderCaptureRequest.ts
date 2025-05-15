@@ -5,11 +5,11 @@
 import { PayPalPaymentSource } from "./PayPalPaymentSource.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-order_capture_request */
-export interface PayPalOrderCaptureRequest
+export type PayPalOrderCaptureRequest =
 {
-	payment_source? : PayPalPaymentSource;
-}
+	payment_source?: PayPalPaymentSource;
+};

@@ -6,15 +6,13 @@ import { PayPalTracker } from "./PayPalTracker.js";
 import { PayPalTrackerItem } from "./PayPalTrackerItem.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-order_tracker_request */
-export interface PayPalTrackerRequest extends PayPalTracker
+export type PayPalTrackerRequest = PayPalTracker &
 {
-	capture_id : string;
-
-	notify_payer? : boolean;
-
-	items? : PayPalTrackerItem[];
-}
+	capture_id: string;
+	notify_payer?: boolean;
+	items?: PayPalTrackerItem[];
+};

@@ -5,11 +5,11 @@
 import { PayPalWebhookLookup } from "./PayPalWebhookLookup.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/webhooks/v1/#definition-WebhookLookupList */
-export interface PayPalWebhookLookupList
+export type PayPalWebhookLookupList =
 {
-	webhook_lookups? : PayPalWebhookLookup[];
-}
+	webhook_lookups?: PayPalWebhookLookup[];
+};

@@ -13,62 +13,42 @@ import { PayPalError } from "../types/PayPalError.js";
 // Class
 //
 
-export interface PayPalClientOptions
+export type PayPalClientOptions =
 {
-	clientId : string;
+	clientId: string;
+	secret: string;
+	useSandbox: boolean;
+};
 
-	secret : string;
-
-	useSandbox : boolean;
-}
-
-export interface PayPalClientRequestOptions
+export type PayPalClientRequestOptions =
 {
-	method : string;
+	method: string;
+	path: string;
+	queryParameters?: ConstructorParameters<typeof URLSearchParams>[0];
+	headers?: ConstructorParameters<typeof Headers>[0];
 
-	path : string;
-
-	queryParameters? : ConstructorParameters<typeof URLSearchParams>[0];
-
-	headers? : ConstructorParameters<typeof Headers>[0];
-
-	body? : unknown;
-}
+	// TODO: make generic?
+	body?: unknown;
+};
 
 export class PayPalClient
 {
-	accessToken : string | null;
+	clientId: string;
+	secret: string;
+	useSandbox: boolean;
 
-	accessTokenExpiresAt : number;
+	accessToken: string | null;
+	accessTokenExpiresAt: number;
+	baseUrl: string;
 
-	baseUrl : string;
-
-	clientId : string;
-
-	secret : string;
-
-	useSandbox : boolean;
-
-	constructor(options : PayPalClientOptions)
+	constructor(options: PayPalClientOptions)
 	{
-		//
-		// Options
-		//
-
 		this.clientId = options.clientId;
-
 		this.secret = options.secret;
-
 		this.useSandbox = options.useSandbox;
 
-		//
-		// Internals
-		//
-
 		this.accessToken = null;
-
 		this.accessTokenExpiresAt = 0;
-
 		this.baseUrl = options.useSandbox ? "https://api-m.sandbox.paypal.com" : "https://api-m.paypal.com";
 	}
 
@@ -83,10 +63,10 @@ export class PayPalClient
 			{
 				method: "POST",
 				headers:
-					{
-						"Authorization": "Basic " + Buffer.from(this.clientId + ":" + this.secret).toString("base64"),
-						"Content-Type": "application/x-www-form-urlencoded",
-					},
+				{
+					"Authorization": "Basic " + Buffer.from(this.clientId + ":" + this.secret).toString("base64"),
+					"Content-Type": "application/x-www-form-urlencoded",
+				},
 			});
 
 		const response = (await rawResponse.json()) as PayPalOAuthToken | PayPalOAuthTokenError;
@@ -102,7 +82,7 @@ export class PayPalClient
 		return response.access_token;
 	}
 
-	async request<PayPalResponse>(options : PayPalClientRequestOptions) : Promise<PayPalError | PayPalResponse>
+	async request<PayPalResponse>(options: PayPalClientRequestOptions): Promise<PayPalError | PayPalResponse>
 	{
 		let url = this.baseUrl + options.path;
 

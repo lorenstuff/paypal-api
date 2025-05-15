@@ -8,16 +8,13 @@ import { PayPalStoredPaymentSourcePaymentType } from "./PayPalStoredPaymentSourc
 import { PayPalStoredPaymentSourceUsageType } from "./PayPalStoredPaymentSourceUsageType.js";
 
 //
-// Type
+// Types
 //
 
-export interface PayPalStoredPaymentSource
+export type PayPalStoredPaymentSource =
 {
-	payment_initiator : PayPalPaymentInitiator;
-
-	payment_type : PayPalStoredPaymentSourcePaymentType;
-
-	usage? : PayPalStoredPaymentSourceUsageType;
-
-	previous_network_transaction_reference? : PayPalNetworkTransactionReference;
-}
+	payment_initiator: PayPalPaymentInitiator;
+	payment_type: PayPalStoredPaymentSourcePaymentType;
+	usage?: PayPalStoredPaymentSourceUsageType;
+	previous_network_transaction_reference?: PayPalNetworkTransactionReference;
+};

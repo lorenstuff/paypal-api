@@ -5,17 +5,14 @@
 import { PayPalExperienceContextBase } from "./PayPalExperienceContextBase.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-ideal_request */
-export interface PayPalIdealRequest
+export type PayPalIdealRequest =
 {
-	name : string;
-
-	country_code : string;
-
-	bic? : string;
-
-	experience_context? : PayPalExperienceContextBase;
-}
+	name: string;
+	country_code: string;
+	bic?: string;
+	experience_context?: PayPalExperienceContextBase;
+};

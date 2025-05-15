@@ -9,7 +9,7 @@ import { PayPalTrackerStatus } from "./PayPalTrackerStatus.js";
 import { PayPalLinkDescription } from "../PayPalLinkDescription.js";
 
 //
-// Type
+// Types
 //
 
 /**
@@ -17,13 +17,10 @@ import { PayPalLinkDescription } from "../PayPalLinkDescription.js";
  *
  * This type has been renamed from the docs because PayPal documents two different "tracker" schemas.
  */
-export interface PayPalTrackerResponse extends PayPalActivityTimestamps
+export type PayPalTrackerResponse = PayPalActivityTimestamps &
 {
-	id? : string;
-
-	status? : PayPalTrackerStatus;
-
-	items? : PayPalTrackerItem[];
-
-	links? : PayPalLinkDescription[];
-}
+	id?: string;
+	status?: PayPalTrackerStatus;
+	items?: PayPalTrackerItem[];
+	links?: PayPalLinkDescription[];
+};

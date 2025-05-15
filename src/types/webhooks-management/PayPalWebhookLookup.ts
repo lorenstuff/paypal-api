@@ -5,15 +5,13 @@
 import { PayPalLinkDescription } from "../PayPalLinkDescription.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/webhooks/v1/#definition-webhooks_lookup */
-export interface PayPalWebhookLookup
+export type PayPalWebhookLookup =
 {
-	id? : string;
-
-	client_id? : string;
-
-	links? : PayPalLinkDescription[];
-}
+	id?: string;
+	client_id?: string;
+	links?: PayPalLinkDescription[];
+};

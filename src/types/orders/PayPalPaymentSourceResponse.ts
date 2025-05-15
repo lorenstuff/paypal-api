@@ -1,5 +1,3 @@
-// noinspection SpellCheckingInspection
-
 //
 // Imports
 //
@@ -18,33 +16,22 @@ import { PayPalTrustly } from "./PayPalTrustly.js";
 import { PayPalVenmoWalletResponse } from "./PayPalVenmoWalletResponse.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-payment_source_response */
-export interface PayPalPaymentSourceResponse
+export type PayPalPaymentSourceResponse =
 {
-	card? : PayPalCardResponse;
-
-	bancontact? : PayPalBancontact;
-
-	blik? : PayPalBLIK;
-
-	eps? : PayPalEPS;
-
-	giropay? : PayPalGiropay;
-
-	ideal? : PayPalIdeal;
-
-	mybank? : PayPalMyBank;
-
-	p24? : PayPalP24;
-
-	sofort? : PayPalSofort;
-
-	trustly? : PayPalTrustly;
-
-	venmo? : PayPalVenmoWalletResponse;
-
-	paypal? : PayPalWalletResponse;
-}
+	card?: PayPalCardResponse;
+	bancontact?: PayPalBancontact;
+	blik?: PayPalBLIK;
+	eps?: PayPalEPS;
+	giropay?: PayPalGiropay;
+	ideal?: PayPalIdeal;
+	mybank?: PayPalMyBank;
+	p24?: PayPalP24;
+	sofort?: PayPalSofort;
+	trustly?: PayPalTrustly;
+	venmo?: PayPalVenmoWalletResponse;
+	paypal?: PayPalWalletResponse;
+};

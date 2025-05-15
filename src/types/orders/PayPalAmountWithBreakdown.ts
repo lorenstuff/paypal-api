@@ -6,11 +6,11 @@ import { PayPalAmountBreakdown } from "./PayPalAmountBreakdown.js";
 import { PayPalMoney } from "./PayPalMoney.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-amount_with_breakdown */
-export interface PayPalAmountWithBreakdown extends PayPalMoney
+export type PayPalAmountWithBreakdown =  PayPalMoney &
 {
-	breakdown? : PayPalAmountBreakdown;
-}
+	breakdown?: PayPalAmountBreakdown;
+};

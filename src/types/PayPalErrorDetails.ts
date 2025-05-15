@@ -1,17 +1,13 @@
 //
-// Type
+// Types
 //
 
 /** @note Documented in various places throughout the API docs. */
-export interface PayPalErrorDetails
+export type PayPalErrorDetails =
 {
-	field? : string;
-
-	value? : string;
-
-	location? : "body" | "path" | "query";
-
-	issue : string;
-
-	description? : string;
-}
+	field?: string;
+	value?: string;
+	location?: "body" | "path" | "query";
+	issue: string;
+	description?: string;
+};

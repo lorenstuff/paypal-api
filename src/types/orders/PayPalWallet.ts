@@ -10,29 +10,20 @@ import { PayPalWalletAttributes } from "./PayPalWalletAttributes.js";
 import { PayPalWalletExperienceContext } from "./PayPalWalletExperienceContext.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-paypal_wallet */
-export interface PayPalWallet
+export type PayPalWallet =
 {
-	experience_context? : PayPalWalletExperienceContext;
-
-	billing_agreement_id? : string;
-
-	vault_id? : string;
-
-	email_address? : string;
-
-	name? : PayPalName;
-
-	phone? : PayPalPhoneWithType;
-
-	birth_date? : string;
-
-	tax_info? : PayPalTaxInfo;
-
-	address? : PayPalPortablePostalAddressMediumGrained;
-
-	attributes? : PayPalWalletAttributes;
-}
+	experience_context?: PayPalWalletExperienceContext;
+	billing_agreement_id?: string;
+	vault_id?: string;
+	email_address?: string;
+	name?: PayPalName;
+	phone?: PayPalPhoneWithType;
+	birth_date?: string;
+	tax_info?: PayPalTaxInfo;
+	address?: PayPalPortablePostalAddressMediumGrained;
+	attributes?: PayPalWalletAttributes;
+};

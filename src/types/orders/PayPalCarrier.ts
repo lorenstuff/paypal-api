@@ -1,7 +1,5 @@
-// noinspection SpellCheckingInspection
-
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-shipment_carrier */

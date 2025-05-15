@@ -10,31 +10,21 @@ import { PayPalShippingDetail } from "./PayPalShippingDetail.js";
 import { PayPalSupplementaryData } from "./PayPalSupplementaryData.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-purchase_unit_request */
-export interface PayPalPurchaseUnitRequest
+export type PayPalPurchaseUnitRequest =
 {
-	reference_id? : string;
-
-	description? : string;
-
-	custom_id? : string;
-
-	invoice_id? : string;
-
-	soft_descriptor? : string;
-
-	items? : PayPalItem[];
-
-	amount : PayPalAmountWithBreakdown;
-
-	payee? : PayPalPayee;
-
-	payment_instruction? : PayPalPaymentInstruction;
-
-	shipping? : PayPalShippingDetail;
-
-	supplementary_data? : PayPalSupplementaryData;
-}
+	reference_id?: string;
+	description?: string;
+	custom_id?: string;
+	invoice_id?: string;
+	soft_descriptor?: string;
+	items?: PayPalItem[];
+	amount: PayPalAmountWithBreakdown;
+	payee?: PayPalPayee;
+	payment_instruction?: PayPalPaymentInstruction;
+	shipping?: PayPalShippingDetail;
+	supplementary_data?: PayPalSupplementaryData;
+};

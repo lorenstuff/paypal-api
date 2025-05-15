@@ -5,7 +5,7 @@
 import { PayPalPatch } from "./PayPalPatch.js";
 
 //
-// Type
+// Types
 //
 
 export type PayPalPatchRequest = PayPalPatch[];

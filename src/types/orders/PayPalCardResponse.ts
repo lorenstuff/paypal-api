@@ -10,29 +10,23 @@ import { PayPalCardFromRequest } from "./PayPalCardFromRequest.js";
 import { PayPalCardType } from "./PayPalCardType.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-card_response */
-export interface PayPalCardResponse
+export type PayPalCardResponse =
 {
-	name? : string;
+	name?: string;
+	last_digits?: string;
+	available_networks?: PayPalCardBrand[];
 
-	last_digits? : string;
+	// Note: This doesn't include "STORE" in the docs
+	type?: Omit<PayPalCardType, "STORE">;
 
-	available_networks? : PayPalCardBrand[];
-
-	type? : Omit<PayPalCardType, "STORE">; // Note: This doesn't include "STORE" in the docs
-
-	from_request? : PayPalCardFromRequest;
-
-	brand? : PayPalCardBrand;
-
-	authentication_result? : PayPalAuthenticationResponse;
-
-	attributes? : PayPalCardAttributesResponse;
-
-	expiry? : string;
-
-	bin_details? : PayPalBINDetails;
-}
+	from_request?: PayPalCardFromRequest;
+	brand?: PayPalCardBrand;
+	authentication_result?: PayPalAuthenticationResponse;
+	attributes?: PayPalCardAttributesResponse;
+	expiry?: string;
+	bin_details?: PayPalBINDetails;
+};

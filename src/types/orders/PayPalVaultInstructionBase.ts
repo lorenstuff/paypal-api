@@ -5,11 +5,11 @@
 import { PayPalStoreInVaultInstruction } from "./PayPalStoreInVaultInstruction.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-vault_instruction_base */
-export interface PayPalVaultInstructionBase
+export type PayPalVaultInstructionBase =
 {
-	store_in_vault? : PayPalStoreInVaultInstruction;
-}
+	store_in_vault?: PayPalStoreInVaultInstruction;
+};

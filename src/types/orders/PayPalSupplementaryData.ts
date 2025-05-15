@@ -5,10 +5,10 @@
 import { PayPalCardSupplementaryData } from "./PayPalCardSupplementaryData.js";
 
 //
-// Type
+// Types
 //
 
-export interface PayPalSupplementaryData
+export type PayPalSupplementaryData =
 {
-	card? : PayPalCardSupplementaryData;
-}
+	card?: PayPalCardSupplementaryData;
+};

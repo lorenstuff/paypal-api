@@ -7,15 +7,13 @@ import { PayPalPaymentSource } from "./PayPalPaymentSource.js";
 import { PayPalProcessingInstruction } from "./PayPalProcessingInstruction.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-confirm_order_request */
-export interface PayPalConfirmOrderRequest
+export type PayPalConfirmOrderRequest =
 {
-	processing_instruction? : PayPalProcessingInstruction;
-
-	application_context? : PayPalConfirmApplicationContext;
-
-	payment_source? : PayPalPaymentSource;
-}
+	processing_instruction?: PayPalProcessingInstruction;
+	application_context?: PayPalConfirmApplicationContext;
+	payment_source?: PayPalPaymentSource;
+};

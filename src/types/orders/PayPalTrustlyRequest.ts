@@ -1,5 +1,3 @@
-// noinspection SpellCheckingInspection
-
 //
 // Imports
 //
@@ -7,14 +5,12 @@
 import { PayPalExperienceContextBase } from "./PayPalExperienceContextBase.js";
 
 //
-// Type
+// Types
 //
 
-export interface PayPalTrustlyRequest
+export type PayPalTrustlyRequest =
 {
-	name : string;
-
-	country_code : string;
-
-	experience_context? : PayPalExperienceContextBase;
-}
+	name: string;
+	country_code: string;
+	experience_context?: PayPalExperienceContextBase;
+};

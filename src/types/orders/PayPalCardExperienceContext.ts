@@ -1,11 +1,10 @@
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-card_experience_context */
-export interface PayPalCardExperienceContext
+export type PayPalCardExperienceContext =
 {
-	return_url? : string;
-
-	cancel_url? : string;
-}
+	return_url?: string;
+	cancel_url?: string;
+};

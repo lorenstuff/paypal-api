@@ -13,21 +13,21 @@ import { PayPalError } from "../types/PayPalError.js";
 // Class
 //
 
-export interface PayPalWebhooksManagementClientOptions
+export type PayPalWebhooksManagementClientOptions =
 {
-	payPalClient : PayPalClient;
-}
+	payPalClient: PayPalClient;
+};
 
-export interface PayPalVerifyWebhookSignatureResult
+export type PayPalVerifyWebhookSignatureResult =
 {
-	verifyWebhookSignatureResponseOrError : PayPalVerifyWebhookSignatureResponse | PayPalError;
-}
+	verifyWebhookSignatureResponseOrError: PayPalVerifyWebhookSignatureResponse | PayPalError;
+};
 
 export class PayPalWebhooksManagementClient
 {
-	payPalClient : PayPalClient;
+	payPalClient: PayPalClient;
 
-	constructor(options : PayPalWebhooksManagementClientOptions)
+	constructor(options: PayPalWebhooksManagementClientOptions)
 	{
 		this.payPalClient = options.payPalClient;
 	}
@@ -39,14 +39,14 @@ export class PayPalWebhooksManagementClient
 	 * @param rawBody The raw body of the request. THIS MUST NOT BE TAMPERED WITH OR VERIFICATION WILL FAIL.
 	 * @see https://stackoverflow.com/a/61420573/18030485
 	 */
-	async verifyWebhookSignature(partialBody : Omit<PayPalVerifyWebhookSignature, "webhook_event">, rawBody : string) : Promise<PayPalVerifyWebhookSignatureResult>
+	async verifyWebhookSignature(partialBody: Omit<PayPalVerifyWebhookSignature, "webhook_event">, rawBody: string): Promise<PayPalVerifyWebhookSignatureResult>
 	{
 		const body =
-			{
-				...partialBody,
+		{
+			...partialBody,
 
-				webhook_event: "__RAW_BODY__",
-			};
+			webhook_event: "__RAW_BODY__",
+		};
 
 		// HACK: This is a hack to workaround PayPal not doing canonicalization on the JSON body.
 		//	See https://stackoverflow.com/a/61420573/18030485 for more details and

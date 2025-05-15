@@ -1,11 +1,10 @@
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-activity_timestamps */
-export interface PayPalActivityTimestamps
+export type PayPalActivityTimestamps =
 {
-	create_time? : string;
-
-	update_time? : string;
-}
+	create_time?: string;
+	update_time?: string;
+};

@@ -1,17 +1,12 @@
-// noinspection SpellCheckingInspection
-
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-trustly */
-export interface PayPalTrustly
+export type PayPalTrustly =
 {
-	name? : string;
-
-	country_code? : string;
-
-	bic? : string;
-
-	iban_last_chars? : string;
-}
+	name?: string;
+	country_code?: string;
+	bic?: string;
+	iban_last_chars?: string;
+};

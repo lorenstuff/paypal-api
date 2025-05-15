@@ -6,19 +6,15 @@ import { PayPalMoney } from "./PayPalMoney.js";
 import { PayPalShippingType } from "./PayPalShippingType.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-shipping_option */
-export interface PayPalShippingOption
+export type PayPalShippingOption =
 {
-	id : string;
-
-	label : string;
-
-	selected : boolean;
-
-	type? : PayPalShippingType;
-
-	amount? : PayPalMoney;
-}
+	id: string;
+	label: string;
+	selected: boolean;
+	type?: PayPalShippingType;
+	amount?: PayPalMoney;
+};

@@ -12,29 +12,22 @@ import { PayPalSellerProtection } from "./PayPalSellerProtection.js";
 import { PayPalLinkDescription } from "../PayPalLinkDescription.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-authorization */
-export interface PayPalAuthorization extends PayPalActivityTimestamps
+export type PayPalAuthorization = PayPalActivityTimestamps &
 {
-	status? : PayPalAuthorizationStatus["status"]; // TODO: The docs doesn't use the object itself here but I feel like the docs are wrong...
+	// TODO: The docs doesn't use the object itself here but I feel like the docs are wrong...
+	status?: PayPalAuthorizationStatus["status"];
 
-	status_details? : PayPalAuthorizationStatusDetails;
-
-	id? : string;
-
-	invoice_id? : string;
-
-	custom_id? : string;
-
-	links? : PayPalLinkDescription[];
-
-	amount? : PayPalMoney;
-
-	network_transaction_reference? : PayPalNetworkTransactionReference;
-
-	seller_protection? : PayPalSellerProtection;
-
-	expiration_time? : string;
-}
+	status_details?: PayPalAuthorizationStatusDetails;
+	id?: string;
+	invoice_id?: string;
+	custom_id?: string;
+	links?: PayPalLinkDescription[];
+	amount?: PayPalMoney;
+	network_transaction_reference?: PayPalNetworkTransactionReference;
+	seller_protection?: PayPalSellerProtection;
+	expiration_time?: string;
+};

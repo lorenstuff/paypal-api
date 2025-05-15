@@ -6,13 +6,12 @@ import { PayPalEnrolled } from "./PayPalEnrolled.js";
 import { PayPalParesStatus } from "./PayPalParesStatus.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-three_d_secure_authentication_response */
-export interface PayPalThreeDSecureAuthenticationResponse
+export type PayPalThreeDSecureAuthenticationResponse =
 {
-	authentication_response? : PayPalParesStatus;
-
-	enrollment_status? : PayPalEnrolled;
-}
+	authentication_response?: PayPalParesStatus;
+	enrollment_status?: PayPalEnrolled;
+};

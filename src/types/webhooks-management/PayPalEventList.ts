@@ -7,15 +7,13 @@ import { PayPalEvent } from "./PayPalEvent.js";
 import { PayPalLinkDescription } from "../PayPalLinkDescription.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/webhooks/v1/#definition-event_list */
-export interface PayPalEventList
+export type PayPalEventList =
 {
-	events? : PayPalEvent[];
-
-	count? : number;
-
-	links? : PayPalLinkDescription[];
-}
+	events?: PayPalEvent[];
+	count?: number;
+	links?: PayPalLinkDescription[];
+};

@@ -8,23 +8,17 @@ import { PayPalPortablePostalAddressMediumGrained } from "./PayPalPortablePostal
 import { PayPalVenmoWalletAttributesResponse } from "./PayPalVenmoWalletAttributesResponse.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-venmo_wallet_response */
-export interface PayPalVenmoWalletResponse
+export type PayPalVenmoWalletResponse =
 {
-	user_name? : string;
-
-	attributes? : PayPalVenmoWalletAttributesResponse;
-
-	email_address? : string;
-
-	account_id? : string;
-
-	name? : PayPalName;
-
-	phone_number? : PayPalPhone;
-
-	address? : PayPalPortablePostalAddressMediumGrained;
-}
+	user_name?: string;
+	attributes?: PayPalVenmoWalletAttributesResponse;
+	email_address?: string;
+	account_id?: string;
+	name?: PayPalName;
+	phone_number?: PayPalPhone;
+	address?: PayPalPortablePostalAddressMediumGrained;
+};

@@ -1,15 +1,15 @@
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/webhooks/v1/#definition-simulate_event */
-export interface PayPalSimulateEvent
+export type PayPalSimulateEvent =
 {
-	webhook_id? : string;
+	webhook_id?: string;
 
-	url? : string;
+	url?: string;
 
-	event_type : string;
+	event_type: string;
 
-	resource_version? : string;
-}
+	resource_version?: string;
+};

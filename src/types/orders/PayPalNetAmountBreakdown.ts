@@ -6,15 +6,13 @@ import { PayPalExchangeRate } from "./PayPalExchangeRate.js";
 import { PayPalMoney } from "./PayPalMoney.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-net_amount_breakdown_item */
-export interface PayPalNetAmountBreakdown
+export type PayPalNetAmountBreakdown =
 {
-	payable_amount? : PayPalMoney;
-
-	converted_amount? : PayPalMoney;
-
-	exchange_rate? : PayPalExchangeRate;
-}
+	payable_amount?: PayPalMoney;
+	converted_amount?: PayPalMoney;
+	exchange_rate?: PayPalExchangeRate;
+};

@@ -8,17 +8,14 @@ import { PayPalShippingOption } from "./PayPalShippingOption.js";
 import { PayPalShippingType } from "./PayPalShippingType.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-shipping_detail */
-export interface PayPalShippingDetail
+export type PayPalShippingDetail =
 {
-	type? : PayPalShippingType;
-
-	options? : PayPalShippingOption[];
-
-	name? : PayPalName;
-
-	address? : PayPalPortablePostalAddressMediumGrained;
-}
+	type?: PayPalShippingType;
+	options?: PayPalShippingOption[];
+	name?: PayPalName;
+	address?: PayPalPortablePostalAddressMediumGrained;
+};

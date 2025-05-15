@@ -7,20 +7,15 @@ import { PayPalCard } from "./PayPalCard.js";
 import { PayPalMoney } from "./PayPalMoney.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-apple_pay_decrypted_token_data */
-export interface PayPalApplePayDecryptedTokenData
+export type PayPalApplePayDecryptedTokenData =
 {
-	device_manufacturer_id? : string;
-
-	// noinspection SpellCheckingInspection
-	payment_data_type? : "3DSECURE" | "EMV";
-
-	transaction_amount? : PayPalMoney;
-
-	tokenized_card : PayPalCard;
-
-	payment_data? : PayPalApplePayPaymentData;
-}
+	device_manufacturer_id?: string;
+	payment_data_type?: "3DSECURE" | "EMV";
+	transaction_amount?: PayPalMoney;
+	tokenized_card: PayPalCard;
+	payment_data?: PayPalApplePayPaymentData;
+};

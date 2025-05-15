@@ -1,11 +1,10 @@
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/webhooks/v1/#definition-Classifiers */
-export interface PayPalClassifiers
+export type PayPalClassifiers =
 {
-	tags? : string[];
-
-	pairs? : Record<string, string>;
-}
+	tags?: string[];
+	pairs?: Record<string, string>;
+};

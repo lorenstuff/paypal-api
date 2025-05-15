@@ -5,17 +5,14 @@
 import { PayPalExperienceContextBase } from "./PayPalExperienceContextBase.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-p24_request */
-export interface PayPalP24Request
+export type PayPalP24Request =
 {
-	name : string;
-
-	email : string;
-
-	country_code : string;
-
-	experience_context? : PayPalExperienceContextBase;
-}
+	name: string;
+	email: string;
+	country_code: string;
+	experience_context?: PayPalExperienceContextBase;
+};

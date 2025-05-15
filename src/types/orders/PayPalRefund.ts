@@ -12,31 +12,25 @@ import { PayPalLinkDescription } from "../PayPalLinkDescription.js";
 import { PayPalSellerPayableBreakdown } from "./PayPalSellerPayableBreakdown.js";
 
 //
-// Type
+// Types
 //1
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-refund */
-export interface PayPalRefund extends PayPalActivityTimestamps
+export type PayPalRefund = PayPalActivityTimestamps &
 {
-	status? : PayPalRefundStatus["status"]; // TODO: The docs doesn't use the object itself here but I feel like the docs are wrong...
+	// TODO: The docs doesn't use the object itself here but I feel like the docs are wrong...
+	status?: PayPalRefundStatus["status"];
 
-	status_details? : PayPalRefundStatusDetails;
-
-	id? : string;
-
-	invoice_id? : string;
-
-	custom_id? : string;
-
-	acquirer_reference_number? : string;
-
-	note_to_payer? : string;
-
-	seller_payable_breakdown? : PayPalSellerPayableBreakdown;
-
-	links? : PayPalLinkDescription[];
-
-	amount? : PayPalMoney;
-
-	payer? : PayPalPayee; // Note: This is intentionally "PayPalPayee" and not "PayPalPayer"
-}
+	status_details?: PayPalRefundStatusDetails;
+	id?: string;
+	invoice_id?: string;
+	custom_id?: string;
+	acquirer_reference_number?: string;
+	note_to_payer?: string;
+	seller_payable_breakdown?: PayPalSellerPayableBreakdown;
+	links?: PayPalLinkDescription[];
+	amount?: PayPalMoney;
+	
+	// Note: This is intentionally "PayPalPayee" and not "PayPalPayer"
+	payer?: PayPalPayee;
+};

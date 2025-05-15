@@ -1,5 +1,3 @@
-// noinspection SpellCheckingInspection
-
 //
 // Imports
 //
@@ -7,15 +5,13 @@
 import { PayPalExperienceContextBase } from "./PayPalExperienceContextBase.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-mybank_request */
-export interface PayPalMyBankRequest
+export type PayPalMyBankRequest =
 {
-	name : string;
-
-	country_code : string;
-
-	experience_context? : PayPalExperienceContextBase;
-}
+	name: string;
+	country_code: string;
+	experience_context?: PayPalExperienceContextBase;
+};

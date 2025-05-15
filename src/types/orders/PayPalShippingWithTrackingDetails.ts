@@ -6,11 +6,11 @@ import { PayPalShippingDetail } from "./PayPalShippingDetail.js";
 import { PayPalTrackerResponse } from "./PayPalTrackerResponse.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-shipping_with_tracking_details */
-export interface PayPalShippingWithTrackingDetails extends PayPalShippingDetail
+export type PayPalShippingWithTrackingDetails = PayPalShippingDetail &
 {
-	trackers? : PayPalTrackerResponse[];
-}
+	trackers?: PayPalTrackerResponse[];
+};

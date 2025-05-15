@@ -6,37 +6,36 @@ import { PayPalCardStoredCredential } from "./PayPalCardStoredCredential.js";
 import { PayPalPaymentMethod } from "./PayPalPaymentMethod.js";
 
 //
-// Type
+// Types
 //
 
-
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-order_application_context */
-export interface PayPalApplicationContext
+export type PayPalApplicationContext =
 {
 	/** @deprecated */
-	brand_name? : string;
+	brand_name?: string;
 
 	/** @deprecated */
-	landing_page? : "LOGIN" | "BILLING" | "NO_PREFERENCE";
+	landing_page?: "LOGIN" | "BILLING" | "NO_PREFERENCE";
 
 	/** @deprecated */
-	shipping_preference? : "GET_FROM_FILE" | "NO_SHIPPING" | "SET_PROVIDED_ADDRESS";
+	shipping_preference?: "GET_FROM_FILE" | "NO_SHIPPING" | "SET_PROVIDED_ADDRESS";
 
 	/** @deprecated */
-	user_action? : "CONTINUE" | "PAY_NOW";
+	user_action?: "CONTINUE" | "PAY_NOW";
 
 	/** @deprecated */
-	return_url? : string;
+	return_url?: string;
 
 	/** @deprecated */
-	cancel_url? : string;
+	cancel_url?: string;
 
 	/** @deprecated */
-	locale? : string;
+	locale?: string;
 
 	/** @deprecated */
-	payment_method? : PayPalPaymentMethod;
+	payment_method?: PayPalPaymentMethod;
 
 	/** @deprecated */
-	stored_payment_source? : PayPalCardStoredCredential;
-}
+	stored_payment_source?: PayPalCardStoredCredential;
+};

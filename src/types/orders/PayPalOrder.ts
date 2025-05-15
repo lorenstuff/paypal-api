@@ -13,25 +13,18 @@ import { PayPalPurchaseUnit } from "./PayPalPurchaseUnit.js";
 import { PayPalLinkDescription } from "../PayPalLinkDescription.js";
 
 //
-// Type
+// Types
 //
 
 /** @see https://developer.paypal.com/docs/api/orders/v2/#definition-order */
-export interface PayPalOrder extends PayPalActivityTimestamps
+export type PayPalOrder = PayPalActivityTimestamps &
 {
-	id? : string;
-
-	processing_instruction? : PayPalProcessingInstruction;
-
-	purchase_units? : PayPalPurchaseUnit[];
-
-	links? : PayPalLinkDescription[];
-
-	payment_source? : PayPalPaymentSourceResponse;
-
-	intent? : PayPalCheckoutPaymentIntent;
-
-	payer? : PayPalPayer;
-
-	status? : PayPalOrderStatus;
-}
+	id?: string;
+	processing_instruction?: PayPalProcessingInstruction;
+	purchase_units?: PayPalPurchaseUnit[];
+	links?: PayPalLinkDescription[];
+	payment_source?: PayPalPaymentSourceResponse;
+	intent?: PayPalCheckoutPaymentIntent;
+	payer?: PayPalPayer;
+	status?: PayPalOrderStatus;
+};

@@ -18,74 +18,69 @@ import { PayPalPatchRequest } from "../types/PayPalPatchRequest.js";
 // Class
 //
 
-export interface PayPalOrdersClientOptions
+export type PayPalOrdersClientOptions =
 {
-	payPalClient : PayPalClient;
+	payPalClient: PayPalClient;
+};
+
+export type PayPalCreateOrderResult =
+{
+	requestId: string;
+	orderOrError: PayPalOrder | PayPalError;
+};
+
+export type PayPalShowOrderDetailsResult =
+{
+	orderOrError: PayPalOrder | PayPalError;
+};
+
+export type PayPalUpdateOrderResult =
+{
+	emptyOrError: {} | PayPalError;
+};
+
+export type PayPalConfirmOrderResult =
+{
+	orderOrError: PayPalOrder | PayPalError;
+};
+
+export type PayPalAuthorizePaymentForOrderResult =
+{
+	requestId: string;
+	orderOrError: PayPalOrder | PayPalError;
+};
+
+export type PayPalCapturePaymentForOrderResult =
+{
+	requestId:  string;
+	orderOrError: PayPalOrder | PayPalError;
 }
 
-export interface PayPalCreateOrderResult
+export type PayPalAddTrackingToOrderResult =
 {
-	requestId : string;
+	orderOrError: PayPalOrder | PayPalError;
+};
 
-	orderOrError : PayPalOrder | PayPalError;
-}
-
-export interface PayPalShowOrderDetailsResult
+export type PayPalUpdateOrCancelTrackingForOrderResult =
 {
-	orderOrError : PayPalOrder | PayPalError;
-}
-
-export interface PayPalUpdateOrderResult
-{
-	emptyOrError : {} | PayPalError;
-}
-
-export interface PayPalConfirmOrderResult
-{
-	orderOrError : PayPalOrder | PayPalError;
-}
-
-export interface PayPalAuthorizePaymentForOrderResult
-{
-	requestId : string;
-
-	orderOrError : PayPalOrder | PayPalError;
-}
-
-export interface PayPalCapturePaymentForOrderResult
-{
-	requestId : string;
-
-	orderOrError : PayPalOrder | PayPalError;
-}
-
-export interface PayPalAddTrackingToOrderResult
-{
-	orderOrError : PayPalOrder | PayPalError;
-}
-
-export interface PayPalUpdateOrCancelTrackingForOrderResult
-{
-	emptyOrError : {} | PayPalError;
-}
+	emptyOrError: {} | PayPalError;
+};
 
 export class PayPalOrdersClient
 {
-	payPalClient : PayPalClient;
+	payPalClient: PayPalClient;
 
-	constructor(options : PayPalOrdersClientOptions)
+	constructor(options: PayPalOrdersClientOptions)
 	{
 		this.payPalClient = options.payPalClient;
 	}
 
-	async createOrder(body : PayPalOrderRequest) : Promise<PayPalCreateOrderResult>
+	async createOrder(body: PayPalOrderRequest): Promise<PayPalCreateOrderResult>
 	{
 		const requestId = Math.random().toString();
 
 		const headers = new Headers();
-
 		headers.set("PayPal-Request-Id", requestId);
-
 		headers.set("Prefer", "return=representation");
 
 		const orderOrError = await this.payPalClient.request<PayPalOrder>(
@@ -102,7 +97,7 @@ export class PayPalOrdersClient
 		};
 	}
 
-	async showOrderDetails(id : string) : Promise<PayPalShowOrderDetailsResult>
+	async showOrderDetails(id: string): Promise<PayPalShowOrderDetailsResult>
 	{
 		const orderOrError = await this.payPalClient.request<PayPalOrder>(
 			{
@@ -115,7 +110,7 @@ export class PayPalOrdersClient
 		};
 	}
 
-	async updateOrder(id : string, body : PayPalPatchRequest) : Promise<PayPalUpdateOrderResult>
+	async updateOrder(id: string, body: PayPalPatchRequest): Promise<PayPalUpdateOrderResult>
 	{
 		const emptyOrError = await this.payPalClient.request<{}>(
 			{
@@ -129,10 +124,9 @@ export class PayPalOrdersClient
 		};
 	}
 
-	async confirmOrder(id : string, body : PayPalConfirmOrderRequest) : Promise<PayPalConfirmOrderResult>
+	async confirmOrder(id: string, body: PayPalConfirmOrderRequest): Promise<PayPalConfirmOrderResult>
 	{
 		const headers = new Headers();
-
 		headers.set("Prefer", "return=representation");
 
 		const orderOrError = await this.payPalClient.request<PayPalOrder>(
@@ -148,14 +142,12 @@ export class PayPalOrdersClient
 		};
 	}
 
-	async authorizePaymentForOrder(id : string, body : PayPalAuthorizeRequest) : Promise<PayPalAuthorizePaymentForOrderResult>
+	async authorizePaymentForOrder(id: string, body: PayPalAuthorizeRequest): Promise<PayPalAuthorizePaymentForOrderResult>
 	{
 		const requestId = Math.random().toString();
 
 		const headers = new Headers();
-
 		headers.set("PayPal-Request-Id", requestId);
-
 		headers.set("Prefer", "return=representation");
 
 		const orderOrError = await this.payPalClient.request<PayPalOrder>(
@@ -172,14 +164,12 @@ export class PayPalOrdersClient
 		};
 	}
 
-	async capturePaymentForOrder(id : string, body : PayPalOrderCaptureRequest) : Promise<PayPalCapturePaymentForOrderResult>
+	async capturePaymentForOrder(id: string, body: PayPalOrderCaptureRequest): Promise<PayPalCapturePaymentForOrderResult>
 	{
 		const requestId = Math.random().toString();
 
 		const headers = new Headers();
-
 		headers.set("PayPal-Request-Id", requestId);
-
 		headers.set("Prefer", "return=representation");
 
 		const orderOrError = await this.payPalClient.request<PayPalOrder>(
@@ -196,7 +186,7 @@ export class PayPalOrdersClient
 		};
 	}
 
-	async addTrackingToOrder(id : string, body : PayPalTrackerRequest) : Promise<PayPalAddTrackingToOrderResult>
+	async addTrackingToOrder(id: string, body: PayPalTrackerRequest): Promise<PayPalAddTrackingToOrderResult>
 	{
 		const orderOrError = await this.payPalClient.request<PayPalOrder>(
 			{
@@ -210,7 +200,7 @@ export class PayPalOrdersClient
 		};
 	}
 
-	async updateOrCancelTrackingForOrder(order_id : string, tracker_id : string, body : PayPalPatchRequest) : Promise<PayPalUpdateOrCancelTrackingForOrderResult>
+	async updateOrCancelTrackingForOrder(order_id: string, tracker_id: string, body: PayPalPatchRequest): Promise<PayPalUpdateOrCancelTrackingForOrderResult>
 	{
 		const emptyOrError = await this.payPalClient.request<{}>(
 			{
