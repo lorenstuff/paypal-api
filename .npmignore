@@ -1,7 +1,0 @@
-node_modules/*
-src/*
-tests/*
-
-.eslintignore
-.eslintrc.cjs
-tsconfig.json

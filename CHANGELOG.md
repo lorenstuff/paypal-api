@@ -1,7 +1,9 @@
-## 1.0.0
+# Changelog
+## 1.0.1
+???
 
-* **[BREAKING CHANGE]**: Renamed `PayPal` to `PayPalClient`.
-* Added `@types/luxon` package.
+## 1.0.0
+Completely rewrote the library with full type coverage for the Orders and Webhooks Management APIs, as well as a fully implemented PayPalOrdersClient class.
 
 ## 0.2.2
 Removed eslint and related packages.

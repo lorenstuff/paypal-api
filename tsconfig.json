@@ -1,18 +1,17 @@
 {
+	"extends": "@lorenstuff/typescript-config",
 	"compilerOptions":
 	{
-		"allowJs": true,
-		"allowSyntheticDefaultImports": true,
-		"declaration": true,
-		"module": "ESNext",
-		"moduleResolution": "node",
-		"outDir": "./lib",
 		"rootDir": "./src",
-		"target": "ESNext"
+		"outDir": "./build",
+
+		"lib":
+		[
+			"ESNext",
+		],
 	},
-	"include": 
+	"include":
 	[
-		"./src/**/*.js",
-		"./src/**/*.ts"
-	]
+		"./src/**/*.ts",
+	],
 }
